@@ -1,0 +1,8 @@
+main\MainGithub.class
+github\GitHubMiner.class
+github\Downloader.class
+vulnerability\Vulnerability.class
+dependency\Dependency.class
+main\Main.class
+vulnerability\OSSIndexRestAPI.class
+dependency\XMLParser.class
