@@ -20,7 +20,7 @@ public class CSVWriter {
 
         if(checkForOK(repository, dependencySTR, vulnerabilitySTR)) {
             FileWriter fileWriter = new FileWriter("report.csv", true);
-            fileWriter.write(repository + ", " + dependencySTR + ", " + vulnerabilitySTR + ", " + cvssScoreSTR + "\n");
+            fileWriter.write(repository + "," + dependencySTR + "," + vulnerabilitySTR + "," + cvssScoreSTR + "\n");
             fileWriter.close();
         }
     }

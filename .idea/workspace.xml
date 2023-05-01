@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="" />
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Initial Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/report.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/csv/CSVWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/csv/CSVWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dependency/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/temp.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,19 +30,26 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LhTmfbscKXvJQeCUGqUw6Y91Rk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\jdomtest\.idea" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -207,8 +220,17 @@
       <workItem from="1682500502635" duration="496000" />
       <workItem from="1682600714338" duration="540000" />
       <workItem from="1682863322814" duration="9493000" />
-      <workItem from="1682880227201" duration="483000" />
+      <workItem from="1682880227201" duration="1100000" />
+      <workItem from="1682926109794" duration="4189000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1682880987161</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682880987161</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,5 +246,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
 </project>
