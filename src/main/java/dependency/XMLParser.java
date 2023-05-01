@@ -7,6 +7,7 @@ import org.jdom2.Namespace;
 import org.jdom2.input.SAXBuilder;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -70,7 +71,10 @@ public class XMLParser {
 
                 //SEARCH FOR VERSION IN ADDITIONAL LIBRARY
                 if(group != null && artifact != null && version == null) {
-                    BufferedReader bufferedReader = new BufferedReader(new FileReader("library.csv"));
+
+                    //READ LIBRARY.CSV FROM RESOURCES
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(XMLParser.class.getClassLoader().getResourceAsStream("library.csv"), StandardCharsets.UTF_8));
+
                     String line = bufferedReader.readLine();
                     while (line != null) {
                         String[] strings = line.split(",");

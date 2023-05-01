@@ -1,6 +1,8 @@
-main\MainGithub.class
+github\FileManager.class
+logger\Logger.class
 github\GitHubMiner.class
-github\Downloader.class
+logger\Logger$Level.class
+csv\CSVWriter.class
 vulnerability\Vulnerability.class
 dependency\Dependency.class
 main\Main.class

@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jdomtest" />
+        <module name="gant" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jdomtest" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

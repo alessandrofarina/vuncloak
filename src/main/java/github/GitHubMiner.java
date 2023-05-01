@@ -1,7 +1,6 @@
 package github;
 
-import logger.MyLevels;
-import logger.MyLogger;
+import logger.Logger;
 import org.kohsuke.github.GHContent;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
@@ -23,7 +22,7 @@ public class GitHubMiner {
     private static Collection<GHContent> _getAllPOMs(GHRepository repository, String path) throws IOException {
         ArrayList<GHContent> poms = new ArrayList<>();
 
-        MyLogger.log(MyLevels.PATH, path);
+        Logger.log(Logger.Level.EXPLORING_PATH, path);
 
         List<GHContent> contents = repository.getDirectoryContent(path);
         for(GHContent content: contents) {
@@ -32,8 +31,7 @@ public class GitHubMiner {
                 poms.add(content);
             if(content.isDirectory()) {
                 Collection<GHContent> _poms = _getAllPOMs(repository, path + "/" + content.getName());
-                for (GHContent _pom : _poms)
-                    poms.add(_pom);
+                poms.addAll(_poms);
             }
         }
 

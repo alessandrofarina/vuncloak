@@ -3,10 +3,9 @@ package main;
 import csv.CSVWriter;
 import dependency.Dependency;
 import dependency.XMLParser;
-import github.Downloader;
+import github.FileManager;
 import github.GitHubMiner;
-import logger.MyLevels;
-import logger.MyLogger;
+import logger.Logger;
 import org.jdom2.JDOMException;
 import org.kohsuke.github.GHContent;
 import vulnerability.OSSIndexRestAPI;
@@ -23,7 +22,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, JDOMException, ParseException, InterruptedException {
 
-        MyLogger.turnOn();
+        Logger.turnOn();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -43,22 +42,27 @@ public class Main {
             //POM
             for(GHContent pom: poms) {
 
-                MyLogger.log(MyLevels.POM, pom.getName() + " - " + pom.getDownloadUrl() + "\n");
-                Downloader.download(pom.getDownloadUrl(), filename);
+                Logger.log(Logger.Level.FOUND_POM, pom.getDownloadUrl());
+
+                FileManager.download(pom.getDownloadUrl(), filename);
 
                 //DEPENDENCIES
                 Collection<Dependency> dependencies = XMLParser.getDependencies(filename);
                 for(Dependency dependency: dependencies) {
-                    MyLogger.log(MyLevels.DEPENDENCY, dependency.toString());
+
+                    Logger.log(Logger.Level.FOUND_DEPENDENCY, dependency.toString());
 
                     //VULNERABILITIES
                     Collection<Vulnerability> vulnerabilities = OSSIndexRestAPI.getVulnerabilities(dependency);
                     for(Vulnerability vulnerability: vulnerabilities) {
-                        MyLogger.log(MyLevels.VULNERABILITY, vulnerability.toString() + "\n");
+
+                        Logger.log(Logger.Level.FOUND_VULNERABILITY, vulnerability.toString());
+
                         csvWriter.write(repository, dependency, vulnerability);
                     }
-
                 }
+
+                FileManager.delete(filename);
             }
 
         }
