@@ -1,8 +1,8 @@
-package logger;
+package utils;
 
 public class Logger {
 
-    public enum Level {EXPLORING_PATH, FOUND_POM, FOUND_DEPENDENCY, FOUND_VULNERABILITY}
+    public enum Level {FOUND_POM, FOUND_DEPENDENCY, FOUND_VULNERABILITY}
 
     private static boolean on = true;
 

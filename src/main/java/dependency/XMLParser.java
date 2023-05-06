@@ -35,6 +35,7 @@ public class XMLParser {
                 if(groupId != null)
                     group = groupId.getValue();
 
+
                 //ARTIFACT
                 String artifact = null;
                 org.jdom2.Element artifactId = dependency.getChild("artifactId", namespace);
@@ -43,7 +44,7 @@ public class XMLParser {
 
                 //VERSION
                 String version = null;
-                org.jdom2.Element versionId = dependency.getChild("versionId", namespace);
+                org.jdom2.Element versionId = dependency.getChild("version", namespace);
                 if(versionId != null)
                     version = versionId.getValue();
 

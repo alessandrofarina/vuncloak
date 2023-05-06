@@ -1,10 +1,9 @@
-github\FileManager.class
-logger\Logger.class
-github\GitHubMiner.class
-logger\Logger$Level.class
-csv\CSVWriter.class
+utils\CSVWriter.class
+utils\Logger.class
+utils\CloneRepoManager.class
 vulnerability\Vulnerability.class
 dependency\Dependency.class
 main\Main.class
+utils\Logger$Level.class
 vulnerability\OSSIndexRestAPI.class
 dependency\XMLParser.class

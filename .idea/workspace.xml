@@ -10,28 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Changes:&#10;- Update to Logging System&#10;- Update to File Management System&#10;- Manifest and Resource Files">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CloneRepoManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/report.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/csv/CSVWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/CSVWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dependency/Dependency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/Dependency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dependency/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/XMLParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/github/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/github/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/github/GitHubMiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/github/GitHubMiner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logger/MyLevels.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logger/MyLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logger/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/csv/CSVWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/csv/CSVWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dependency/XMLParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dependency/XMLParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/github/Downloader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/github/GitHubMiner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/github/GitHubMiner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logger/MyLevels.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logger/MyLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/github/FileManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/github/GitHubMiner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logger/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/csv/CSVWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dependency/Dependency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dependency/XMLParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/github/GitHubMiner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vulnerability/OSSIndexRestAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vulnerability/Vulnerability.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,18 +65,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/jdomtest/src/main/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/jdomtest/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src\main\resources" />
@@ -87,7 +86,7 @@
       <recent name="C:\Users\user\IdeaProjects\jdomtest\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.jdomtest [compile]">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -115,6 +114,19 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="gant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -220,38 +232,13 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="jdomtest [install]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="install" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Maven.gant [package]" />
         <item itemvalue="Maven.jdomtest [compile]" />
         <item itemvalue="Maven.jdomtest [clean]" />
-        <item itemvalue="Maven.jdomtest [install]" />
+        <item itemvalue="Application.Main2" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Maven.gant [package]" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +271,10 @@
       <workItem from="1682863322814" duration="9493000" />
       <workItem from="1682880227201" duration="1100000" />
       <workItem from="1682926109794" duration="5348000" />
-      <workItem from="1682940457532" duration="5957000" />
+      <workItem from="1682940457532" duration="6055000" />
+      <workItem from="1682964543638" duration="3158000" />
+      <workItem from="1683272183832" duration="445000" />
+      <workItem from="1683367462425" duration="7279000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -300,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682932386205</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changes:&#10;- Update to Logging System&#10;- Update to File Management System&#10;- Manifest and Resource Files">
+      <created>1682947588296</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682947588296</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

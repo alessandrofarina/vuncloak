@@ -11,11 +11,6 @@ public class Dependency {
     public Dependency(String group, String artifact, String version) {
         this.group = group;
         this.artifact = artifact;
-
-        if(version.charAt(0) == '$') {
-            version = version.substring(2, version.length() - 1);
-        }
-
         this.version = version;
     }
 
