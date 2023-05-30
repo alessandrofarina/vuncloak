@@ -1,10 +1,16 @@
 package dependency;
 
+import vulnerability.Vulnerability;
+
+import java.util.Collection;
+import java.util.Objects;
+
 public class Dependency {
 
     private String group;
     private String artifact;
     private String version;
+    private Collection<Vulnerability> vulnerabilities;
 
     public Dependency() {}
 
@@ -38,6 +44,14 @@ public class Dependency {
         this.version = version;
     }
 
+    public Collection<Vulnerability> getVulnerabilities() {
+        return vulnerabilities;
+    }
+
+    public void setVulnerabilities(Collection<Vulnerability> vulnerabilities) {
+        this.vulnerabilities = vulnerabilities;
+    }
+
     @Override
     public String toString() {
         return "Dependency{" +
@@ -45,6 +59,14 @@ public class Dependency {
                 ", artifact='" + artifact + '\'' +
                 ", version='" + version + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dependency that = (Dependency) o;
+        return Objects.equals(getGroup(), that.getGroup()) && Objects.equals(getArtifact(), that.getArtifact()) && Objects.equals(getVersion(), that.getVersion());
     }
 
 }
