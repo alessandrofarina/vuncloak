@@ -12,8 +12,6 @@ public class Dependency {
     private String version;
     private Collection<Vulnerability> vulnerabilities;
 
-    public Dependency() {}
-
     public Dependency(String group, String artifact, String version) {
         this.group = group;
         this.artifact = artifact;
@@ -52,6 +50,10 @@ public class Dependency {
         this.vulnerabilities = vulnerabilities;
     }
 
+    public String resume() {
+        return group + "." + artifact + "@" + version;
+    }
+
     @Override
     public String toString() {
         return "Dependency{" +
@@ -69,4 +71,8 @@ public class Dependency {
         return Objects.equals(getGroup(), that.getGroup()) && Objects.equals(getArtifact(), that.getArtifact()) && Objects.equals(getVersion(), that.getVersion());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getGroup(), getArtifact(), getVersion());
+    }
 }

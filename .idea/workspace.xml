@@ -9,20 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Changes:&#10;- Update to Logging System&#10;- Update to File Management System&#10;- Manifest and Resource Files">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Core Update: Commit Walk Algorithm">
+      <change afterPath="$PROJECT_DIR$/src/main/java/registry/Registry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dependency/Dependency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/Dependency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dependency/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/XMLParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/CloneRepoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/GitManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Logger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/OSSIndexRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/RestAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/CSVWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/GitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/git/GitManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/Vulnerability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/Vulnerability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/library.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/library.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dependency/Dependency.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dependency/Dependency.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dependency/XMLParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dependency/XMLParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vulnerability/OSSIndexRestAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vulnerability/Vulnerability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vulnerability/Vulnerability.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,24 +59,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Alessandro/IdeaProjects/Thesis/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;grid.search.filter.rows&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alessandro/IdeaProjects/Thesis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src\main\resources" />
@@ -119,6 +123,19 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="gant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main2" />
       <module name="gant" />
       <extension name="coverage">
         <pattern>
@@ -234,6 +251,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main2" />
         <item itemvalue="Maven.jdomtest [compile]" />
         <item itemvalue="Maven.jdomtest [clean]" />
         <item itemvalue="Maven.gant [package]" />
@@ -276,7 +294,18 @@
       <workItem from="1685433886109" duration="83000" />
       <workItem from="1685439954600" duration="601000" />
       <workItem from="1685448533094" duration="4130000" />
-      <workItem from="1685476826894" duration="6730000" />
+      <workItem from="1685476826894" duration="6891000" />
+      <workItem from="1685517984362" duration="5515000" />
+      <workItem from="1685524188320" duration="1656000" />
+      <workItem from="1685526559001" duration="945000" />
+      <workItem from="1685632912584" duration="29000" />
+      <workItem from="1685690982086" duration="17616000" />
+      <workItem from="1685972648886" duration="7313000" />
+      <workItem from="1686063823711" duration="907000" />
+      <workItem from="1686226955950" duration="7556000" />
+      <workItem from="1686490404529" duration="6114000" />
+      <workItem from="1687598262712" duration="4000" />
+      <workItem from="1690532847570" duration="7492000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -299,18 +328,55 @@
       <option name="project" value="LOCAL" />
       <updated>1682947588296</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Core Update: Commit Walk Algorithm">
+      <created>1685484153102</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685484153102</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="b110f1df-9f1d-4fce-a048-398e32c4aa40" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State />
+          </value>
+        </entry>
+        <entry key="b110f1df-9f1d-4fce-a048-398e32c4aa40">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
           </value>
         </entry>
       </map>
@@ -320,6 +386,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Improved XMLParser:&#10;- Ignore &quot;test&quot; scope dependencies&#10;- Look for version in POM properties node&#10;- Look for project version in POM parent node" />
     <MESSAGE value="Changes:&#10;- Update to Logging System&#10;- Update to File Management System&#10;- Manifest and Resource Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Update to Logging System&#10;- Update to File Management System&#10;- Manifest and Resource Files" />
+    <MESSAGE value="Core Update: Commit Walk Algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Core Update: Commit Walk Algorithm" />
   </component>
 </project>

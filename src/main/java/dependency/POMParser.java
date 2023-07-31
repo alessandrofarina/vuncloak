@@ -5,25 +5,23 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.Namespace;
 import org.jdom2.input.SAXBuilder;
-import utils.GitManager;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
-public class XMLParser {
+public class POMParser {
 
     private static final String LIBRARY = "library.csv";
 
     private static Document document;
     private static Namespace namespace;
 
-    public static Collection<Dependency> getPOMDependencies() throws IOException, JDOMException {
+    public static Collection<Dependency> getPOMDependencies(String path) throws IOException, JDOMException {
         ArrayList<Dependency> list = new ArrayList<>();
 
-        document = new SAXBuilder().build(GitManager.getPOMPath());
+        document = new SAXBuilder().build(path);
         namespace = document.getRootElement().getNamespace();
         list.addAll(_getPOMDependencies(getChild(document.getRootElement(), "dependencies")));
         list.addAll(_getPOMDependencies(getChild(getChild(document.getRootElement(), "dependencyManagement"), "dependencies")));
@@ -36,9 +34,7 @@ public class XMLParser {
         ArrayList<Dependency> list = new ArrayList<>();
 
         if(start != null) {
-            List<Element> dependencies = start.getChildren();
-
-            for(Element dependency: dependencies) {
+            for(Element dependency: start.getChildren()) {
 
                 //SCOPE
                 String scope = getValue(getChild(dependency, "scope"));
@@ -80,7 +76,7 @@ public class XMLParser {
         String version = null;
 
         //READ LIBRARY FROM RESOURCES
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(XMLParser.class.getClassLoader().getResourceAsStream(LIBRARY), StandardCharsets.UTF_8));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(POMParser.class.getClassLoader().getResourceAsStream(LIBRARY), StandardCharsets.UTF_8));
         String line = bufferedReader.readLine();
         while (line != null && version == null) {
             String[] strings = line.split(",");
