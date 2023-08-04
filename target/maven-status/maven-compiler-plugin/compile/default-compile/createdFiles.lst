@@ -1,9 +1,8 @@
-utils\CSVWriter.class
-utils\Logger.class
-utils\CloneRepoManager.class
+dependency\POMParser.class
+git\GitManager.class
 vulnerability\Vulnerability.class
 dependency\Dependency.class
 main\Main.class
-utils\Logger$Level.class
-vulnerability\OSSIndexRestAPI.class
-dependency\XMLParser.class
+vulnerability\VulnRestAPI.class
+registry\Registry.class
+registry\RegItem.class

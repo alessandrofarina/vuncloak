@@ -47,11 +47,13 @@ public class GitManager {
     }
 
     public static void cherryPick(RevCommit commit) throws IOException, GitAPIException {
-        Git temp = Git.open(repository);
-        while(commit.getParentCount() > 1)
-            commit = commit.getParents()[0];
-        temp.cherryPick().include(commit).setContentMergeStrategy(ContentMergeStrategy.THEIRS).call();
-        temp.close();
+        if(commit.getParentCount() != 0) {
+            Git temp = Git.open(repository);
+            while(commit.getParentCount() > 1)
+                commit = commit.getParents()[0];
+            temp.cherryPick().include(commit).setContentMergeStrategy(ContentMergeStrategy.THEIRS).call();
+            temp.close();
+        }
     }
 
     public static void reset() throws IOException, GitAPIException {

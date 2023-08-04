@@ -10,7 +10,6 @@ import registry.Registry;
 import git.GitManager;
 import vulnerability.VulnRestAPI;
 import vulnerability.Vulnerability;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -19,46 +18,35 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main2(String[] args) throws GitAPIException, IOException, ParseException, JDOMException, InterruptedException {
-
-        System.out.print("Enter GitHub repository link: ");
-        String repository = (new Scanner(System.in)).nextLine();
-        GitManager.clone(repository);
-
-        if(!GitManager.hasPOM()) {
-            System.out.println("File POM not found");
-            System.exit(0);
-        }
-
-        Collection<Dependency> current = POMParser.getPOMDependencies(GitManager.getPOMPath());
-        for(Dependency dependency : current) {
-            dependency.setVulnerabilities(VulnRestAPI.getVulnerabilities(dependency));
-            for(Vulnerability vulnerability : dependency.getVulnerabilities()) {
-                System.out.println(dependency + " - " + vulnerability);
-            }
-        }
-
-    }
-
     public static void main(String[] args) throws GitAPIException, IOException, ParseException {
 
-        Registry.init();
+        System.out.println("■ GANT");
 
-        System.out.print("Enter GitHub repository link: ");
+        //INPUT REPOSITORY
+        System.out.print("■ Enter a GitHub Repository URL: ");
         String repository = (new Scanner(System.in)).nextLine();
+
+        //CLONE
+        System.out.print("\n■ Cloning Repository...");
         GitManager.clone(repository);
 
+        //FILE POM.XML NOT FOUND
         if(!GitManager.hasPOM()) {
-            System.out.println("File POM not found");
+            System.out.println("■ File POM.XML Not Found...");
+            System.out.println("■ Press Enter to Exit");
+            System.in.read();
             System.exit(0);
         }
+        Registry.init();
 
+        //COMMIT HISTORY NAV
         Collection<Dependency> previous = new ArrayList<>();
-
         for(RevCommit commit : GitManager.getPOMCommits()) {
             try
             {
+                //CHERRY PICK
                 GitManager.cherryPick(commit);
+                System.out.println("\n■ Checking Commit " + commit.getName());
 
                 //CHECK FOR NEWLY INTRODUCED VULNERABILITIES
                 Collection<Dependency> current = POMParser.getPOMDependencies(GitManager.getPOMPath());
@@ -67,6 +55,7 @@ public class Main {
                     if(!current.contains(dependency)) {
                         for(Vulnerability vulnerability : dependency.getVulnerabilities()) {
                             Registry.fix(vulnerability, commit);
+                            System.out.println("■ Fixed Vulnerability " + vulnerability.getCve());
                         }
                     }
                 }
@@ -79,10 +68,14 @@ public class Main {
                         previous.add(dependency);
 
                         for(Vulnerability vulnerability : dependency.getVulnerabilities()) {
-                            if(Registry.contains(vulnerability))
-                               Registry.update(repository, dependency, vulnerability, commit);
-                            else
+                            if(Registry.contains(vulnerability)) {
+                                Registry.update(repository, dependency, vulnerability, commit);
+                            }
+                            else {
                                 Registry.add(repository, dependency, vulnerability, commit);
+                                System.out.println("■ Found Vulnerability " + vulnerability.getCve() + " -- Dependency " + dependency.resume());
+                            }
+
                         }
 
                     }
