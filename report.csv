@@ -50,3 +50,6 @@ https://github.com/KevinXie0131/SpringMVC-Spring-MyBatis,1972a6936c9963834247026
 https://github.com/KevinXie0131/SpringMVC-Spring-MyBatis,1972a6936c99638342470268aa738418df4bcf2b,_,org.mybatis.mybatis@3.1.1,CVE-2020-26945
 https://github.com/KevinXie0131/SpringMVC-Spring-MyBatis,1972a6936c99638342470268aa738418df4bcf2b,7666d5cc192af245f72e8c3ee2b1fb550d6af6ad,com.alibaba.druid@0.2.26,CVE-2021-33800
 https://github.com/KevinXie0131/SpringMVC-Spring-MyBatis,1972a6936c99638342470268aa738418df4bcf2b,7666d5cc192af245f72e8c3ee2b1fb550d6af6ad,com.alibaba.fastjson@1.1.41,CVE-2017-18349
+https://github.com/apache/maven-jlink-plugin,0b6186591888e821df97cefcbb1a8020f510fefe,_,org.apache.maven.maven-core@3.1.1,CVE-2021-26291
+https://github.com/apache/maven-jlink-plugin,40aaa62f09a300924db1e66b46cf0de824e74770,ecb4f27d5b822065e583a900e370e3c2f651099b,org.codehaus.plexus.plexus-archiver@4.2.5,CVE-2023-37460
+https://github.com/alessandrofarina/thesis,92c2ecaedcd54413cc6234bfd7906b5479419d9e,_,org.json.json@20220924,CVE-2022-45688

@@ -27,13 +27,13 @@ public class Main {
         String repository = (new Scanner(System.in)).nextLine();
 
         //CLONE
-        System.out.print("\n■ Cloning Repository...");
+        System.out.print("\n■ Cloning Repository...\n");
         GitManager.clone(repository);
 
         //FILE POM.XML NOT FOUND
         if(!GitManager.hasPOM()) {
             System.out.println("■ File POM.XML Not Found...");
-            System.out.println("■ Press Enter to Exit");
+            System.out.print("■ Press Enter to Exit");
             System.in.read();
             System.exit(0);
         }
@@ -82,17 +82,20 @@ public class Main {
                 }
 
             }
-            catch (JDOMException e) { ; }
-            catch (JSONException e) { ; }
-            catch (ParseException e) { ; }
-            catch (InterruptedException e) { ; }
-            catch (IllegalArgumentException e) { ; }
+            catch (JDOMException e) { }
+            catch (JSONException e) { }
+            catch (ParseException e) { }
+            catch (InterruptedException e) { }
+            catch (IllegalArgumentException e) { }
             finally { GitManager.reset(); }
         }
 
         Registry.writeToFile();
 
         //END
+        System.out.print("\n■ Press Enter to Exit");
+        System.in.read();
+        System.exit(0);
     }
 
 }
