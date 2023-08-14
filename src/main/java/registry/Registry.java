@@ -41,11 +41,6 @@ public class Registry {
         item.setCommitFix(commitFix.getName());
     }
 
-    public static void addSafe(Dependency dependency) {
-        String keyD = dependency.resume();
-        set.add(keyD);
-    }
-
     public static boolean contains(Dependency dependency) {
         String keyD = dependency.resume();
         return set.contains(keyD);
@@ -54,6 +49,11 @@ public class Registry {
     public static boolean contains(Vulnerability vulnerability) {
         String keyV = vulnerability.getCve();
         return map.containsKey(keyV);
+    }
+
+    public static RegItem get(Vulnerability vulnerability) {
+        String keyV = vulnerability.getCve();
+        return map.get(keyV);
     }
 
     public static void writeToFile() throws IOException {

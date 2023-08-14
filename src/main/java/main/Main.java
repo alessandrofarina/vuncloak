@@ -6,6 +6,7 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.jdom2.JDOMException;
 import org.json.JSONException;
+import registry.RegItem;
 import registry.Registry;
 import git.GitManager;
 import vulnerability.VulnRestAPI;
@@ -69,6 +70,9 @@ public class Main {
 
                         for(Vulnerability vulnerability : dependency.getVulnerabilities()) {
                             if(Registry.contains(vulnerability)) {
+                                RegItem item = Registry.get(vulnerability);
+                                if(item.getCommitFix() != null)
+                                    System.out.println("■ Reintroduced Vulnerability " + vulnerability.getCve() + " -- Dependency " + dependency.resume());
                                 Registry.update(repository, dependency, vulnerability, commit);
                             }
                             else {
