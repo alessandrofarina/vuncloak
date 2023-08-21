@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Upload Statistics Main">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Remove Statistics.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Statistics.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f5294679-8a42-4287-9a7a-aa2ad8025b63" />
+        <option name="url" value="https://github.com/AlakayFisher27/thesis" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -292,7 +303,7 @@
       <workItem from="1692276850411" duration="4165000" />
       <workItem from="1692359449161" duration="2145000" />
       <workItem from="1692535726896" duration="1615000" />
-      <workItem from="1692619390607" duration="71000" />
+      <workItem from="1692619390607" duration="206000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -364,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692284332792</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Remove Statistics.java">
+      <created>1692619536596</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1692619536596</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,6 +440,7 @@
     <MESSAGE value="Update SLF4J NOP Version" />
     <MESSAGE value="Add Reintroduced Vulnerability Notification" />
     <MESSAGE value="Upload Statistics Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload Statistics Main" />
+    <MESSAGE value="Remove Statistics.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove Statistics.java" />
   </component>
 </project>
