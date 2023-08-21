@@ -118,4 +118,4 @@ fabric.properties
 /.idea/
 /.repos/
 /target/
-/src/main/java/main/Statistics.java
+/src/main/java/Statistics/

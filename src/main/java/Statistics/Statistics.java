@@ -1,4 +1,4 @@
-package main;
+package Statistics;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -8,6 +8,7 @@ import vulnerability.VulnRestAPI;
 import vulnerability.Vulnerability;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
@@ -17,13 +18,35 @@ import java.net.http.HttpResponse;
 import java.text.ParseException;
 import java.util.Collection;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
 public class Statistics {
 
     private static final String FILENAME = "report.csv";
 
-    public static void main(String[] args) throws IOException, InterruptedException, ParseException {
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader reader = new BufferedReader(new FileReader(FILENAME));
+
+        TreeSet<String> repositories = new TreeSet<>();
+
+        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+
+            String repository = line.split(",")[0];
+            repositories.add(repository);
+
+        }
+
+        int count = 0;
+        for(String repository: repositories) {
+            System.out.println("#" + (++count) + ": " + repository);
+        }
+
+
+    }
+
+    public static void main2(String[] args) throws IOException, InterruptedException, ParseException {
         BufferedReader reader = new BufferedReader(new FileReader(FILENAME));
 
         TreeMap<String, Integer> yearCountMap = new TreeMap<>();
@@ -49,7 +72,7 @@ public class Statistics {
                 scoreCountMap.put(score, scoreCountMap.containsKey(score) ? scoreCountMap.get(score) + 1 : 1);
             }
             catch (JSONException e) { }
-            TimeUnit.SECONDS.sleep(7); //REQUEST TIME DELAY REQUIRED BY FIREWALL
+            TimeUnit.MILLISECONDS.sleep(5500); //REQUEST TIME DELAY REQUIRED BY FIREWALL
         }
 
         System.out.println("\n■ YEAR");
