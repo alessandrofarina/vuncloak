@@ -21,9 +21,10 @@ public class Main {
 
     public static void main(String[] args) throws GitAPIException, IOException, ParseException {
 
-        System.out.println("■ GANT");
+        String pomFile = "temp_pom.xml";
 
         //INPUT REPOSITORY
+        System.out.println("■ GANT");
         System.out.print("■ Enter a GitHub Repository URL: ");
         String repository = (new Scanner(System.in)).nextLine();
 
@@ -45,12 +46,12 @@ public class Main {
         for(RevCommit commit : GitManager.getPOMCommits()) {
             try
             {
-                //CHERRY PICK
-                GitManager.cherryPick(commit);
+                //SHOW POM
+                GitManager.showPOM(commit, pomFile);
                 System.out.println("\n■ Checking Commit " + commit.getName());
 
                 //CHECK FOR NEWLY INTRODUCED VULNERABILITIES
-                Collection<Dependency> current = POMParser.getPOMDependencies(GitManager.getPOMPath());
+                Collection<Dependency> current = POMParser.getPOMDependencies(pomFile);
 
                 for(Dependency dependency : previous) {
                     if(!current.contains(dependency)) {
@@ -91,7 +92,6 @@ public class Main {
             catch (ParseException e) { }
             catch (InterruptedException e) { }
             catch (IllegalArgumentException e) { }
-            finally { GitManager.reset(); }
         }
 
         Registry.writeToFile();

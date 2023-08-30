@@ -119,3 +119,4 @@ fabric.properties
 /.repos/
 /target/
 /src/main/java/Statistics/
+/temp_pom.xml
