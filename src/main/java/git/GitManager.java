@@ -2,12 +2,9 @@ package git;
 
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ListBranchCommand;
-import org.eclipse.jgit.api.ResetCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.*;
-import org.eclipse.jgit.merge.ContentMergeStrategy;
 import org.eclipse.jgit.revwalk.RevCommit;
-import org.eclipse.jgit.revwalk.RevTree;
 import org.eclipse.jgit.treewalk.TreeWalk;
 
 import java.io.File;
@@ -17,51 +14,57 @@ import java.text.ParseException;
 import java.util.*;
 
 public class GitManager {
+
+    public static final String TEMP_POM_FILENAME = "temp_pom.xml";
+
     private static final String ROOT = ".repos";
     private static final int MAX_COUNT = 100;
-    private static File repository;
-    private static Git git;
+    private static File pathToRepo;
 
-    public static void clone(String url) throws GitAPIException, IOException {
-        repository = new File(ROOT + "/" + url.substring(19));
-        if(!repository.exists()) {
-            repository.mkdirs();
-            Git.cloneRepository().setURI(url).setDirectory(repository).call();
+    public static void clone(String url) throws GitAPIException {
+        pathToRepo = new File(ROOT + "/" + url.substring(19));
+        if(!pathToRepo.exists()) {
+            pathToRepo.mkdirs();
+            Git.cloneRepository().setURI(url).setDirectory(pathToRepo).call();
         }
-        git = Git.open(repository);
     }
 
     public static boolean hasPOM() {
-        File pom = new File(repository.getPath() + "/pom.xml");
-        return pom.exists();
+        return (new File(pathToRepo.getPath() + "/pom.xml")).exists();
     }
 
-    public static void showPOM(RevCommit commit, String filename) throws IOException, GitAPIException, ParseException {
-        Repository repo = git.getRepository();
-        ObjectId treeId = repo.resolve(commit.getTree().getId().getName() + "^{tree}");
-        TreeWalk treeWalk = TreeWalk.forPath(repo, "pom.xml", treeId);
+    public static void showPOM(RevCommit commit) throws IOException, GitAPIException, ParseException {
+        try(Git git = Git.open(pathToRepo)) {
+            try(Repository repository = git.getRepository()) {
+                ObjectId commitTreeId = repository.resolve(commit.getTree().getId().getName() + "^{tree}");
+                TreeWalk treeWalk = TreeWalk.forPath(repository, "pom.xml", commitTreeId);
 
-        ObjectReader objectReader = repo.newObjectReader();
-        ObjectLoader objectLoader = objectReader.open(treeWalk.getObjectId(0));
-        byte[] bytes = objectLoader.getBytes();
-        objectReader.close();
+                //READ THE COMMIT VERSION POM FILE
+                ObjectReader objectReader = repository.newObjectReader();
+                byte[] bytes = objectReader.open(treeWalk.getObjectId(0)).getBytes();
+                objectReader.close();
 
-        File outputFile = new File(filename);
-        FileOutputStream outputStream = new FileOutputStream(outputFile);
-        outputStream.write(bytes);
-        outputStream.close();
+                //DOWNLOAD TO LOCAL
+                FileOutputStream outputStream = new FileOutputStream(TEMP_POM_FILENAME);
+                outputStream.write(bytes);
+                outputStream.close();
+            }
+        }
     }
 
-    public static Collection<RevCommit> getPOMCommits() throws IOException, GitAPIException, ParseException {
+    public static Collection<RevCommit> getPOMCommits() throws IOException, GitAPIException {
         ArrayList<RevCommit> list = new ArrayList<>();
 
-        ObjectId defaultBranchId = git.branchList().setListMode(ListBranchCommand.ListMode.ALL).call().get(0).getObjectId();
+        try(Git git = Git.open(pathToRepo)) {
 
-        Iterator<RevCommit> commits = git.log().addPath("pom.xml").add(defaultBranchId).call().iterator();
-        for(int i = 0; i < MAX_COUNT && commits.hasNext(); ++i)
-            list.add(commits.next());
+            //GET ALL POM RELATED COMMITS IN THE DEFAULT BRANCH
+            ObjectId defaultBranchId = git.branchList().setListMode(ListBranchCommand.ListMode.ALL).call().get(0).getObjectId();
+            Iterator<RevCommit> commits = git.log().addPath("pom.xml").add(defaultBranchId).call().iterator();
+            for(int i = 0; i < MAX_COUNT && commits.hasNext(); ++i)
+                list.add(commits.next());
+        }
+
         Collections.reverse(list);
-
         return list;
     }
 

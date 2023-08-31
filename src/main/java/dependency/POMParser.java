@@ -1,5 +1,6 @@
 package dependency;
 
+import git.GitManager;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -10,27 +11,50 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 public class POMParser {
 
     private static final String LIBRARY = "library.csv";
-
     private static Document document;
     private static Namespace namespace;
+    private static HashMap<String, HashMap<String, String>> library;
 
-    public static Collection<Dependency> getPOMDependencies(String path) throws IOException, JDOMException {
+    public static void init() throws IOException {
+        //LOAD IN MEMORY LIBRARY FROM RESOURCES
+        library = new HashMap<>();
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(POMParser.class.getClassLoader().getResourceAsStream(LIBRARY), StandardCharsets.UTF_8));
+        String line = bufferedReader.readLine();
+        while (line != null) {
+            String[] strings = line.split(",");
+            String group = strings[0], artifact = strings[1], version = strings[2];
+
+            if(library.containsKey(group)) {
+                HashMap<String, String> map = library.get(group);
+                map.put(artifact, version);
+            } else {
+                HashMap<String, String> map = new HashMap<>();
+                map.put(artifact, version);
+                library.put(group, map);
+            }
+
+            line = bufferedReader.readLine();
+        }
+    }
+
+    public static Collection<Dependency> getDependencies() throws IOException, JDOMException {
         ArrayList<Dependency> list = new ArrayList<>();
 
-        document = new SAXBuilder().build(path);
+        document = new SAXBuilder().build(GitManager.TEMP_POM_FILENAME);
         namespace = document.getRootElement().getNamespace();
-        list.addAll(_getPOMDependencies(getChild(document.getRootElement(), "dependencies")));
-        list.addAll(_getPOMDependencies(getChild(getChild(document.getRootElement(), "dependencyManagement"), "dependencies")));
+        list.addAll(_getDependencies(getChild(document.getRootElement(), "dependencies")));
+        list.addAll(_getDependencies(getChild(getChild(document.getRootElement(), "dependencyManagement"), "dependencies")));
 
         return list;
     }
 
-
-    private static Collection<Dependency> _getPOMDependencies(Element start) throws IOException, JDOMException {
+    private static Collection<Dependency> _getDependencies(Element start) throws IOException, JDOMException {
         ArrayList<Dependency> list = new ArrayList<>();
 
         if(start != null) {
@@ -48,11 +72,11 @@ public class POMParser {
 
                 //SEARCH FOR VERSION IN PARENT OR PROPERTIES
                 if(version != null && version.startsWith("$"))
-                    version = searchForVersionPOM(version);
+                    version = searchVersion(version);
 
                 //SEARCH FOR VERSION IN ADDITIONAL LIBRARY
                 if(version == null)
-                    version = searchForVersionLibrary(group, artifact);
+                    version = searchVersionLibrary(group, artifact);
 
                 //ADD FOUND DEPENDENCY
                 if(version != null)
@@ -64,7 +88,7 @@ public class POMParser {
         return list;
     }
 
-    private static String searchForVersionPOM(String version) {
+    private static String searchVersion(String version) {
         String temp = version.substring(2, version.length() - 1);
         if(temp.equals("project.version"))
             return getValue(getChild(getChild(document.getRootElement(), "parent"), "version"));
@@ -72,19 +96,15 @@ public class POMParser {
             return getValue(getChild(getChild(document.getRootElement(), "properties"), temp));
     }
 
-    private static String searchForVersionLibrary(String group, String artifact) throws IOException {
+    private static String searchVersionLibrary(String group, String artifact) throws IOException {
         String version = null;
 
-        //READ LIBRARY FROM RESOURCES
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(POMParser.class.getClassLoader().getResourceAsStream(LIBRARY), StandardCharsets.UTF_8));
-        String line = bufferedReader.readLine();
-        while (line != null && version == null) {
-            String[] strings = line.split(",");
-            if(strings[0].equals(group) && strings[1].equals(artifact))
-                version = strings[2];
-            line = bufferedReader.readLine();
+        if(library.containsKey(group)) {
+            HashMap<String, String> map = library.get(group);
+            if(map.containsKey(artifact)) {
+                version = map.get(artifact);
+            }
         }
-        bufferedReader.close();
 
         return version;
     }

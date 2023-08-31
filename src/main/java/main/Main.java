@@ -11,7 +11,11 @@ import registry.Registry;
 import git.GitManager;
 import vulnerability.VulnRestAPI;
 import vulnerability.Vulnerability;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,10 +25,16 @@ public class Main {
 
     public static void main(String[] args) throws GitAPIException, IOException, ParseException {
 
-        String pomFile = "temp_pom.xml";
+        System.out.println("■ GANT");
+
+        //SONATYPE API LOGIN
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("credentials.txt")));
+        String email = bufferedReader.readLine().split(":")[1];
+        String token = bufferedReader.readLine().split(":")[1];
+        bufferedReader.close();
+        VulnRestAPI.authorize(email, token);
 
         //INPUT REPOSITORY
-        System.out.println("■ GANT");
         System.out.print("■ Enter a GitHub Repository URL: ");
         String repository = (new Scanner(System.in)).nextLine();
 
@@ -39,7 +49,11 @@ public class Main {
             System.in.read();
             System.exit(0);
         }
+
+        //ANALYSIS START
+        long start = System.currentTimeMillis();
         Registry.init();
+        POMParser.init();
 
         //COMMIT HISTORY NAV
         Collection<Dependency> previous = new ArrayList<>();
@@ -47,11 +61,11 @@ public class Main {
             try
             {
                 //SHOW POM
-                GitManager.showPOM(commit, pomFile);
+                GitManager.showPOM(commit);
                 System.out.println("\n■ Checking Commit " + commit.getName());
 
                 //CHECK FOR NEWLY INTRODUCED VULNERABILITIES
-                Collection<Dependency> current = POMParser.getPOMDependencies(pomFile);
+                Collection<Dependency> current = POMParser.getDependencies();
 
                 for(Dependency dependency : previous) {
                     if(!current.contains(dependency)) {
@@ -95,6 +109,17 @@ public class Main {
         }
 
         Registry.writeToFile();
+
+        //ANALYSIS END
+        long end = System.currentTimeMillis();
+        long min = (end - start) / 1000 / 60;
+        long sec = (end - start) / 1000 % 60;
+        long mil = (end - start) % 1000;
+
+        System.out.print("\n■ Analysis Completed. Time Elapsed: ");
+        System.out.print(min < 10 ? ("0" + min + ":") : (min + ":"));
+        System.out.print(sec < 10 ? ("0" + sec + ":") : (sec + ":"));
+        System.out.print(mil >= 100 ? (mil) : mil > 10 ? ("0" + mil) : "00" + mil);
 
         //END
         System.out.print("\n■ Press Enter to Exit");

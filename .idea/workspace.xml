@@ -9,10 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Deleted Statistics">
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Switch from CherryPick to Git Show Alike solution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/report.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/git/GitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/git/GitManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/VulnRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/VulnRestAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,18 +160,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Statistics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Statistics.Statistics" />
+    <configuration name="Stax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Stax" />
       <module name="gant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Statistics.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="gant [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <configuration name="gant [compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
@@ -193,38 +223,13 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="gant [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="package" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.GitShow" />
-        <item itemvalue="Maven.gant [package]" />
-        <item itemvalue="Application.Statistics" />
+        <item itemvalue="Application.Stax" />
         <item itemvalue="Maven.gant [compile]" />
+        <item itemvalue="Maven.gant [clean]" />
+        <item itemvalue="Application.GitShow" />
       </list>
     </recent_temporary>
   </component>
@@ -295,7 +300,9 @@
       <workItem from="1692535726896" duration="1615000" />
       <workItem from="1692619390607" duration="580000" />
       <workItem from="1693132316793" duration="308000" />
-      <workItem from="1693384341598" duration="8296000" />
+      <workItem from="1693384341598" duration="8604000" />
+      <workItem from="1693469292337" duration="7271000" />
+      <workItem from="1693485072443" duration="2528000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -381,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692619658625</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Switch from CherryPick to Git Show Alike solution">
+      <created>1693397018179</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1693397018179</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,6 +455,7 @@
     <MESSAGE value="Upload Statistics Main" />
     <MESSAGE value="Remove Statistics.java" />
     <MESSAGE value="Deleted Statistics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted Statistics" />
+    <MESSAGE value="Switch from CherryPick to Git Show Alike solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch from CherryPick to Git Show Alike solution" />
   </component>
 </project>
