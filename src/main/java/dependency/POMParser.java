@@ -25,8 +25,7 @@ public class POMParser {
         library = new HashMap<>();
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(POMParser.class.getClassLoader().getResourceAsStream(LIBRARY), StandardCharsets.UTF_8));
-        String line = bufferedReader.readLine();
-        while (line != null) {
+        for(String line = bufferedReader.readLine(); line != null; line = bufferedReader.readLine()) {
             String[] strings = line.split(",");
             String group = strings[0], artifact = strings[1], version = strings[2];
 
@@ -38,9 +37,8 @@ public class POMParser {
                 map.put(artifact, version);
                 library.put(group, map);
             }
-
-            line = bufferedReader.readLine();
         }
+
     }
 
     public static Collection<Dependency> getDependencies() throws IOException, JDOMException {

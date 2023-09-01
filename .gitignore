@@ -120,3 +120,5 @@ fabric.properties
 /target/
 /src/main/java/Statistics/
 /temp_pom.xml
+/credentials.txt
+/repositories.txt
