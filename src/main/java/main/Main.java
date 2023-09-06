@@ -18,8 +18,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Scanner;
 
 public class Main {
 
@@ -50,9 +48,7 @@ public class Main {
             //FILE POM.XML NOT FOUND
             if (!GitManager.hasPOM()) {
                 System.out.println("■ File POM.XML Not Found...");
-                System.out.print("■ Press Enter to Exit");
-                System.in.read();
-                System.exit(0);
+                continue;
             }
 
             //ANALYSIS START
@@ -61,7 +57,7 @@ public class Main {
             POMParser.init();
 
             //COMMIT HISTORY NAV
-            Collection<Dependency> previous = new ArrayList<>();
+            ArrayList<Dependency> previous = new ArrayList<>();
             for (RevCommit commit : GitManager.getPOMCommits()) {
                 try {
                     //SHOW POM
@@ -69,7 +65,7 @@ public class Main {
                     System.out.println("\n■ Checking Commit " + commit.getName());
 
                     //CHECK FOR NEWLY INTRODUCED VULNERABILITIES
-                    Collection<Dependency> current = POMParser.getDependencies();
+                    ArrayList<Dependency> current = POMParser.getDependencies();
 
                     for (Dependency dependency : previous) {
                         if (!current.contains(dependency)) {
@@ -80,11 +76,12 @@ public class Main {
                         }
                     }
 
+                    VulnRestAPI.applyVulnerabilities(current);
+
                     previous = new ArrayList<>();
                     for (Dependency dependency : current) {
                         if (!Registry.contains(dependency)) {
 
-                            dependency.setVulnerabilities(VulnRestAPI.getVulnerabilities(dependency));
                             previous.add(dependency);
 
                             for (Vulnerability vulnerability : dependency.getVulnerabilities()) {
@@ -106,9 +103,7 @@ public class Main {
                 } catch (JDOMException e) {
                 } catch (JSONException e) {
                 } catch (ParseException e) {
-                } catch (InterruptedException e) {
-                } catch (IllegalArgumentException e) {
-                }
+                } catch (IllegalArgumentException e) {}
             }
 
             Registry.writeToFile();

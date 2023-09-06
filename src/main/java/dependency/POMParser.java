@@ -41,7 +41,7 @@ public class POMParser {
 
     }
 
-    public static Collection<Dependency> getDependencies() throws IOException, JDOMException {
+    public static ArrayList<Dependency> getDependencies() throws IOException, JDOMException {
         ArrayList<Dependency> list = new ArrayList<>();
 
         document = new SAXBuilder().build(GitManager.TEMP_POM_FILENAME);

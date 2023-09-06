@@ -9,14 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="- Sonatype API Authorization Email + Token&#10;- Load Spring Library in Memory for Speedup&#10;- Code cleaning">
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="- Add Multiple Repositories Analysis">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/VulnRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/VulnRestAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,19 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GitShow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.GitShow" />
-      <module name="vuncloak" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="vuncloak" />
@@ -160,8 +147,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Stax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Stax" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Test" />
       <module name="vuncloak" />
       <extension name="coverage">
         <pattern>
@@ -173,43 +160,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="Time" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Time" />
       <module name="vuncloak" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="vuncloak" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gant [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
     </configuration>
     <configuration name="gant [compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
@@ -236,13 +198,38 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="vuncloak [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Time" />
+        <item itemvalue="Maven.vuncloak [package]" />
         <item itemvalue="Maven.gant [compile]" />
-        <item itemvalue="Maven.gant [clean]" />
-        <item itemvalue="Application.Stax" />
-        <item itemvalue="Application.GitShow" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +303,13 @@
       <workItem from="1693384341598" duration="8604000" />
       <workItem from="1693469292337" duration="7271000" />
       <workItem from="1693485072443" duration="2842000" />
-      <workItem from="1693565956858" duration="1082000" />
+      <workItem from="1693565956858" duration="4155000" />
+      <workItem from="1693652872973" duration="725000" />
+      <workItem from="1693909366384" duration="1352000" />
+      <workItem from="1693926159864" duration="4238000" />
+      <workItem from="1693986432696" duration="637000" />
+      <workItem from="1693987345239" duration="935000" />
+      <workItem from="1693988292875" duration="1216000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -416,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693487883286</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="- Add Multiple Repositories Analysis">
+      <created>1693569150970</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1693569150970</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,6 +478,7 @@
     <MESSAGE value="Deleted Statistics" />
     <MESSAGE value="Switch from CherryPick to Git Show Alike solution" />
     <MESSAGE value="- Sonatype API Authorization Email + Token&#10;- Load Spring Library in Memory for Speedup&#10;- Code cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Sonatype API Authorization Email + Token&#10;- Load Spring Library in Memory for Speedup&#10;- Code cleaning" />
+    <MESSAGE value="- Add Multiple Repositories Analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Add Multiple Repositories Analysis" />
   </component>
 </project>
