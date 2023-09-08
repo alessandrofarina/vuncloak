@@ -9,12 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="- Add Multiple Repositories Analysis">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="- Multiple JSON POST Request to Sonatype API for Speedup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/git/GitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/git/GitManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/VulnRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/VulnRestAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
@@ -309,7 +306,10 @@
       <workItem from="1693926159864" duration="4238000" />
       <workItem from="1693986432696" duration="637000" />
       <workItem from="1693987345239" duration="935000" />
-      <workItem from="1693988292875" duration="1216000" />
+      <workItem from="1693988292875" duration="8255000" />
+      <workItem from="1693999657455" duration="113000" />
+      <workItem from="1694012811063" duration="2065000" />
+      <workItem from="1694074210920" duration="21016000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -416,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693569150970</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="- Multiple JSON POST Request to Sonatype API for Speedup">
+      <created>1693989805903</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1693989805903</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,6 +486,7 @@
     <MESSAGE value="Switch from CherryPick to Git Show Alike solution" />
     <MESSAGE value="- Sonatype API Authorization Email + Token&#10;- Load Spring Library in Memory for Speedup&#10;- Code cleaning" />
     <MESSAGE value="- Add Multiple Repositories Analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Add Multiple Repositories Analysis" />
+    <MESSAGE value="- Multiple JSON POST Request to Sonatype API for Speedup" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Multiple JSON POST Request to Sonatype API for Speedup" />
   </component>
 </project>

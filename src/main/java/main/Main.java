@@ -67,11 +67,14 @@ public class Main {
                     //CHECK FOR NEWLY INTRODUCED VULNERABILITIES
                     ArrayList<Dependency> current = POMParser.getDependencies();
 
+                    //CHECK FOR FIX COMMITS
                     for (Dependency dependency : previous) {
                         if (!current.contains(dependency)) {
                             for (Vulnerability vulnerability : dependency.getVulnerabilities()) {
-                                Registry.fix(vulnerability, commit);
-                                System.out.println("■ Fixed Vulnerability " + vulnerability.getCve());
+                                if(Registry.get(vulnerability).getCommitFix() == null) {
+                                    Registry.fix(vulnerability, commit);
+                                    System.out.println("■ Fixed Vulnerability " + vulnerability.getCve());
+                                }
                             }
                         }
                     }
@@ -103,6 +106,8 @@ public class Main {
                 } catch (JDOMException e) {
                 } catch (JSONException e) {
                 } catch (ParseException e) {
+                } catch (IOException e) {
+                } catch (NullPointerException e) {
                 } catch (IllegalArgumentException e) {}
             }
 

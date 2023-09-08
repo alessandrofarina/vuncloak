@@ -16,9 +16,8 @@ import java.util.*;
 public class GitManager {
 
     public static final String TEMP_POM_FILENAME = "temp_pom.xml";
-
+    private static int MAX_COUNT = 100;
     private static final String ROOT = ".repos";
-    private static final int MAX_COUNT = 100;
     private static File pathToRepo;
 
     public static void clone(String url) throws GitAPIException {
@@ -60,7 +59,7 @@ public class GitManager {
             //GET ALL POM RELATED COMMITS IN THE DEFAULT BRANCH
             ObjectId defaultBranchId = git.branchList().setListMode(ListBranchCommand.ListMode.ALL).call().get(0).getObjectId();
             Iterator<RevCommit> commits = git.log().addPath("pom.xml").add(defaultBranchId).call().iterator();
-            for(int i = 0; i < MAX_COUNT && commits.hasNext(); ++i)
+            while(commits.hasNext())
                 list.add(commits.next());
         }
 
