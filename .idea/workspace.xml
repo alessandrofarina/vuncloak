@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="- Add report.cvs  : vulnerabilities found with Vuncloak&#10;- Add archive.csv : repositories sample">
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Update to third-party libraries versions">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,12 +91,13 @@
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alessandro\IdeaProjects\Thesis\src\main\java" />
       <recent name="C:\Users\Alessandro\IdeaProjects\Thesis" />
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src" />
       <recent name="C:\Users\user\IdeaProjects\jdomtest\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.vuncloak [package]">
+  <component name="RunManager" selected="Application.Files">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -129,6 +129,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CWE" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Statistics.CWE" />
+      <module name="vuncloak" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Statistics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Files" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Statistics.Files" />
+      <module name="vuncloak" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Statistics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="vuncloak [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -154,31 +180,6 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="vuncloak [clean:clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean:clean" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <configuration name="vuncloak [compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -191,31 +192,6 @@
             <option name="goals">
               <list>
                 <option value="compile" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="vuncloak [compiler:compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="compiler:compile" />
               </list>
             </option>
             <option name="pomFileName" value="pom.xml" />
@@ -256,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Files" />
+        <item itemvalue="Application.CWE" />
         <item itemvalue="Maven.vuncloak [package]" />
         <item itemvalue="Maven.vuncloak [compile]" />
         <item itemvalue="Maven.vuncloak [clean]" />
-        <item itemvalue="Maven.vuncloak [compiler:compile]" />
-        <item itemvalue="Maven.vuncloak [clean:clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -351,6 +327,10 @@
       <workItem from="1695111883681" duration="1490000" />
       <workItem from="1695455910320" duration="142000" />
       <workItem from="1695456972368" duration="1225000" />
+      <workItem from="1695468647766" duration="8201000" />
+      <workItem from="1695479282509" duration="335000" />
+      <workItem from="1695657391720" duration="298000" />
+      <workItem from="1695752317675" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -478,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694193006389</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Update to third-party libraries versions">
+      <created>1695468820392</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1695468820392</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,6 +531,7 @@
     <MESSAGE value="- Multiple JSON POST Request to Sonatype API for Speedup" />
     <MESSAGE value="- Fix Commit search changes&#10;- Code Cleaning" />
     <MESSAGE value="- Add report.cvs  : vulnerabilities found with Vuncloak&#10;- Add archive.csv : repositories sample" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Add report.cvs  : vulnerabilities found with Vuncloak&#10;- Add archive.csv : repositories sample" />
+    <MESSAGE value="Update to third-party libraries versions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to third-party libraries versions" />
   </component>
 </project>
