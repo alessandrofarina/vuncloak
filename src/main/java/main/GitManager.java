@@ -1,4 +1,4 @@
-package git;
+package main;
 
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ListBranchCommand;

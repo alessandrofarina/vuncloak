@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Update to third-party libraries versions">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Update gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/git/GitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GitManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/VulnRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/VulnAPI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,13 +94,13 @@
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alessandro\IdeaProjects\Thesis\src\main\java" />
       <recent name="C:\Users\Alessandro\IdeaProjects\Thesis" />
+      <recent name="C:\Users\Alessandro\IdeaProjects\Thesis\src\main\java" />
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src" />
       <recent name="C:\Users\user\IdeaProjects\jdomtest\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Files">
+  <component name="RunManager" selected="Maven.vuncloak [package]">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -155,30 +158,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vuncloak [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
+    <configuration name="Score" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Statistics.Score" />
+      <module name="vuncloak" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Statistics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="vuncloak [compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
@@ -232,11 +223,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Files" />
-        <item itemvalue="Application.CWE" />
         <item itemvalue="Maven.vuncloak [package]" />
+        <item itemvalue="Application.CWE" />
+        <item itemvalue="Application.Score" />
+        <item itemvalue="Application.Files" />
         <item itemvalue="Maven.vuncloak [compile]" />
-        <item itemvalue="Maven.vuncloak [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +321,13 @@
       <workItem from="1695468647766" duration="8201000" />
       <workItem from="1695479282509" duration="335000" />
       <workItem from="1695657391720" duration="298000" />
-      <workItem from="1695752317675" duration="48000" />
+      <workItem from="1695752317675" duration="179000" />
+      <workItem from="1696061065717" duration="112000" />
+      <workItem from="1696069580528" duration="163000" />
+      <workItem from="1696257071363" duration="9000" />
+      <workItem from="1696276137460" duration="1776000" />
+      <workItem from="1696281517601" duration="2223000" />
+      <workItem from="1696340905457" duration="3905000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -465,7 +462,21 @@
       <option name="project" value="LOCAL" />
       <updated>1695468820392</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Update gitignore">
+      <created>1695752397680</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1695752397680</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Update gitignore">
+      <created>1695752456192</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1695752456192</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,6 +543,7 @@
     <MESSAGE value="- Fix Commit search changes&#10;- Code Cleaning" />
     <MESSAGE value="- Add report.cvs  : vulnerabilities found with Vuncloak&#10;- Add archive.csv : repositories sample" />
     <MESSAGE value="Update to third-party libraries versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to third-party libraries versions" />
+    <MESSAGE value="Update gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore" />
   </component>
 </project>

@@ -8,8 +8,7 @@ import org.jdom2.JDOMException;
 import org.json.JSONException;
 import registry.RegItem;
 import registry.Registry;
-import git.GitManager;
-import vulnerability.VulnRestAPI;
+import vulnerability.VulnAPI;
 import vulnerability.Vulnerability;
 
 import java.io.BufferedReader;
@@ -30,7 +29,7 @@ public class Main {
         String email = credentials.readLine().split(":")[1];
         String token = credentials.readLine().split(":")[1];
         credentials.close();
-        VulnRestAPI.authorize(email, token);
+        VulnAPI.authorize(email, token);
 
         //INPUT REPOSITORY
         ArrayList<String> repos = new ArrayList<>();
@@ -79,7 +78,10 @@ public class Main {
                         }
                     }
 
-                    VulnRestAPI.applyVulnerabilities(current);
+                    //GET VULNERABILITIES
+                    ArrayList<ArrayList<Vulnerability>> book = VulnAPI.getVulnerabilities(current);
+                    for(int i = 0; i < current.size(); ++i)
+                        current.get(i).setVulnerabilities(book.get(i));
 
                     previous = new ArrayList<>();
                     for (Dependency dependency : current) {
