@@ -1,8 +1,8 @@
 dependency\POMParser.class
-vulnerability\VulnAPI.class
-main\Main.class
 main\GitManager.class
+vulnerability\VulnAPI.class
 vulnerability\Vulnerability.class
 dependency\Dependency.class
+main\Main.class
 registry\Registry.class
 registry\RegItem.class

@@ -128,7 +128,6 @@ public class Main {
             System.out.println("");
         }
 
-        System.out.println("\n■ Cleaning Temp Files");
         GitManager.clean();
 
         //END

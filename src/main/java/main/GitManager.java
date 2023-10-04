@@ -69,17 +69,6 @@ public class GitManager {
 
     public static void clean() {
         (new File(TEMP_POM_FILENAME)).delete();
-        _clean(new File(ROOT));
-    }
-
-    public static void _clean(File root) {
-        for(File file: root.listFiles()) {
-            if(file.isDirectory())
-                _clean(file);
-            else
-                file.delete();
-        }
-        root.delete();
     }
 
 }
