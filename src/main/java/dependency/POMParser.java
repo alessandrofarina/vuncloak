@@ -41,10 +41,10 @@ public class POMParser {
 
     }
 
-    public static ArrayList<Dependency> getDependencies() throws IOException, JDOMException {
+    public static ArrayList<Dependency> getDependencies(String pom) throws IOException, JDOMException {
         ArrayList<Dependency> list = new ArrayList<>();
 
-        document = new SAXBuilder().build(GitManager.TEMP_POM_FILENAME);
+        document = new SAXBuilder().build(pom);
         namespace = document.getRootElement().getNamespace();
         list.addAll(_getDependencies(getChild(document.getRootElement(), "dependencies")));
         list.addAll(_getDependencies(getChild(getChild(document.getRootElement(), "dependencyManagement"), "dependencies")));

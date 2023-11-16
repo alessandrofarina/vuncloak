@@ -9,13 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="- Add temp files cleaning after analysis&#10;- Upload histories.csv">
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Update temp files cleaning&#10;Update README.md file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/GitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GitManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,14 +93,14 @@
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alessandro\IdeaProjects\Thesis\src\main\java" />
       <recent name="C:\Users\Alessandro\IdeaProjects\Thesis\images" />
       <recent name="C:\Users\Alessandro\IdeaProjects\Thesis" />
-      <recent name="C:\Users\Alessandro\IdeaProjects\Thesis\src\main\java" />
       <recent name="C:\Users\user\IdeaProjects\jdomtest\src" />
       <recent name="C:\Users\user\IdeaProjects\jdomtest\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.vuncloak [package]">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -147,8 +145,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Topvuln" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Statistics.Topvuln" />
+    <configuration name="TestingVuln" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Statistics.TestingVuln" />
       <module name="vuncloak" />
       <extension name="coverage">
         <pattern>
@@ -237,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Maven.vuncloak [package]" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Maven.vuncloak [compile]" />
         <item itemvalue="Maven.vuncloak [clean]" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Topvuln" />
+        <item itemvalue="Application.TestingVuln" />
+        <item itemvalue="Maven.vuncloak [package]" />
       </list>
     </recent_temporary>
   </component>
@@ -343,7 +341,19 @@
       <workItem from="1696281517601" duration="2223000" />
       <workItem from="1696340905457" duration="3935000" />
       <workItem from="1696409698395" duration="480000" />
-      <workItem from="1696424807064" duration="6118000" />
+      <workItem from="1696424807064" duration="6190000" />
+      <workItem from="1696540938422" duration="237000" />
+      <workItem from="1696574418411" duration="616000" />
+      <workItem from="1696578167018" duration="6000" />
+      <workItem from="1696578313983" duration="1571000" />
+      <workItem from="1696589323043" duration="1629000" />
+      <workItem from="1696593873132" duration="4000" />
+      <workItem from="1699951781131" duration="657000" />
+      <workItem from="1699988536357" duration="150000" />
+      <workItem from="1699994707188" duration="527000" />
+      <workItem from="1700044530180" duration="2028000" />
+      <workItem from="1700066765765" duration="39000" />
+      <workItem from="1700134940272" duration="3523000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -506,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696429770328</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Update temp files cleaning&#10;Update README.md file">
+      <created>1696431239858</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1696431239858</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,6 +593,7 @@
     <MESSAGE value="Update gitignore" />
     <MESSAGE value="Changes to packages organization" />
     <MESSAGE value="- Add temp files cleaning after analysis&#10;- Upload histories.csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Add temp files cleaning after analysis&#10;- Upload histories.csv" />
+    <MESSAGE value="Update temp files cleaning&#10;Update README.md file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update temp files cleaning&#10;Update README.md file" />
   </component>
 </project>

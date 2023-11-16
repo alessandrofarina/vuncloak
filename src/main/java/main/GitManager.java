@@ -32,7 +32,7 @@ public class GitManager {
         return (new File(pathToRepo.getPath() + "/pom.xml")).exists();
     }
 
-    public static void showPOM(RevCommit commit) throws IOException, GitAPIException, ParseException {
+    public static void show(RevCommit commit) throws IOException, GitAPIException, ParseException {
         try(Git git = Git.open(pathToRepo)) {
             try(Repository repository = git.getRepository()) {
                 ObjectId commitTreeId = repository.resolve(commit.getTree().getId().getName() + "^{tree}");

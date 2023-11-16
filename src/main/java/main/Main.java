@@ -60,11 +60,11 @@ public class Main {
             for (RevCommit commit : GitManager.getPOMCommits()) {
                 try {
                     //SHOW POM
-                    GitManager.showPOM(commit);
+                    GitManager.show(commit);
                     System.out.println("\n■ Checking Commit " + commit.getName());
 
                     //CHECK FOR NEWLY INTRODUCED VULNERABILITIES
-                    ArrayList<Dependency> current = POMParser.getDependencies();
+                    ArrayList<Dependency> current = POMParser.getDependencies(GitManager.TEMP_POM_FILENAME);
 
                     //CHECK FOR FIX COMMITS
                     for (Dependency dependency : previous) {
