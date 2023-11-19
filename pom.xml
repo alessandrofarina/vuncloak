@@ -13,7 +13,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdom2.version>2.0.6.1</jdom2.version>
-        <json.version>20230618</json.version>
+        <json.version>20231013</json.version>
         <jgit.version>6.7.0.202309050840-r</jgit.version>
         <slf4j.version>2.0.9</slf4j.version>
     </properties>

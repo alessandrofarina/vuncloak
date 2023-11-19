@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Update temp files cleaning&#10;Update README.md file">
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Removed Dependency between POMParser and GitManager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dependency/POMParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/GitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GitManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/VulnAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/VulnAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -353,7 +354,9 @@
       <workItem from="1699994707188" duration="527000" />
       <workItem from="1700044530180" duration="2028000" />
       <workItem from="1700066765765" duration="39000" />
-      <workItem from="1700134940272" duration="3523000" />
+      <workItem from="1700134940272" duration="3661000" />
+      <workItem from="1700307248217" duration="2706000" />
+      <workItem from="1700390655227" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -523,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696431239858</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Removed Dependency between POMParser and GitManager">
+      <created>1700138790557</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1700138790557</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,6 +604,7 @@
     <MESSAGE value="Changes to packages organization" />
     <MESSAGE value="- Add temp files cleaning after analysis&#10;- Upload histories.csv" />
     <MESSAGE value="Update temp files cleaning&#10;Update README.md file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update temp files cleaning&#10;Update README.md file" />
+    <MESSAGE value="Removed Dependency between POMParser and GitManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Dependency between POMParser and GitManager" />
   </component>
 </project>
