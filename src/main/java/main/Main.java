@@ -29,7 +29,14 @@ public class Main {
         String email = credentials.readLine().split(":")[1];
         String token = credentials.readLine().split(":")[1];
         credentials.close();
-        VulnAPI.authorize(email, token);
+
+        try { VulnAPI.authorize(email, token); }
+        catch(IOException e) {
+            System.out.println("\n■ Sonatype OSS Index Returned 401 Unauthorized: Check your Credentials...");
+            System.out.print("\n■ Press Enter to Exit");
+            System.in.read();
+            System.exit(0);
+        }
 
         //INPUT REPOSITORY
         ArrayList<String> repos = new ArrayList<>();
@@ -105,12 +112,12 @@ public class Main {
                         }
                     }
 
-                } catch (JDOMException e) {
-                } catch (JSONException e) {
-                } catch (ParseException e) {
-                } catch (IOException e) {
-                } catch (NullPointerException e) {
-                } catch (IllegalArgumentException e) {}
+                } catch (JDOMException e) { System.out.println(e);
+                } catch (JSONException e) { System.out.println(e);
+                } catch (ParseException e) { System.out.println(e);
+                } catch (IOException e) { System.out.println(e);
+                } catch (NullPointerException e) { System.out.println(e);
+                } catch (IllegalArgumentException e) { System.out.println(e); }
             }
 
             Registry.writeToFile();

@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Removed Dependency between POMParser and GitManager">
+    <list default="true" id="55a42939-d878-4e60-98b6-4964786ccebc" name="Changes" comment="Fix JSON Vulnerability CVE-2023-5072">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/GitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GitManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vulnerability/VulnAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vulnerability/VulnAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
@@ -101,7 +100,7 @@
       <recent name="C:\Users\user\IdeaProjects\jdomtest\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.vuncloak [package]">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -146,18 +145,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestingVuln" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Statistics.TestingVuln" />
-      <module name="vuncloak" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Statistics.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="vuncloak [assembly:single]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="assembly:single" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <configuration name="vuncloak [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
@@ -236,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Maven.vuncloak [package]" />
         <item itemvalue="Maven.vuncloak [compile]" />
         <item itemvalue="Maven.vuncloak [clean]" />
-        <item itemvalue="Application.TestingVuln" />
-        <item itemvalue="Maven.vuncloak [package]" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Maven.vuncloak [assembly:single]" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +367,8 @@
       <workItem from="1700066765765" duration="39000" />
       <workItem from="1700134940272" duration="3661000" />
       <workItem from="1700307248217" duration="2706000" />
-      <workItem from="1700390655227" duration="28000" />
+      <workItem from="1700390655227" duration="559000" />
+      <workItem from="1701937404843" duration="2933000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1682880987161</created>
@@ -533,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700138790557</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fix JSON Vulnerability CVE-2023-5072">
+      <created>1700390818718</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700390818718</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,6 +624,7 @@
     <MESSAGE value="- Add temp files cleaning after analysis&#10;- Upload histories.csv" />
     <MESSAGE value="Update temp files cleaning&#10;Update README.md file" />
     <MESSAGE value="Removed Dependency between POMParser and GitManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Dependency between POMParser and GitManager" />
+    <MESSAGE value="Fix JSON Vulnerability CVE-2023-5072" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix JSON Vulnerability CVE-2023-5072" />
   </component>
 </project>
